@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "encrypt:main.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "currentChar">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "decrypt:main.cpp">
+         <PersistentStrings>
+            <PersistentString
+               value = "(currentChar - 97) - shift)">
+            </PersistentString>
+            <PersistentString
+               value = "-1 % 26">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
