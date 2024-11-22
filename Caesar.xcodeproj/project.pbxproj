@@ -20,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		349E2B5C2CF136CB00560C01 /* Caesar */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Caesar; sourceTree = BUILT_PRODUCTS_DIR; };
+		349E2B662CF1376B00560C01 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -44,6 +45,7 @@
 		349E2B532CF136CB00560C01 = {
 			isa = PBXGroup;
 			children = (
+				349E2B662CF1376B00560C01 /* README.md */,
 				349E2B5E2CF136CB00560C01 /* Caesar */,
 				349E2B5D2CF136CB00560C01 /* Products */,
 			);
@@ -93,6 +95,7 @@
 				TargetAttributes = {
 					349E2B5B2CF136CB00560C01 = {
 						CreatedOnToolsVersion = 16.1;
+						LastSwiftMigration = 1610;
 					};
 				};
 			};
@@ -244,16 +247,21 @@
 		349E2B642CF136CB00560C01 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
 		349E2B652CF136CB00560C01 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};
