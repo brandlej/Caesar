@@ -1,3 +1,3 @@
-# Caesar Cipher
+# Caesar
 
-C++ Caesar cipher implementation
+C++ Caesar cipher implementation.
