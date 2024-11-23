@@ -2,7 +2,7 @@
 #include <string>
 
 namespace constants {
-    constexpr int asciiLowerbound { 97 };
+    constexpr int asciiLowerBound { 97 };
     constexpr int alphabetLength { 26 };
 }
 
@@ -17,8 +17,12 @@ std::string encrypt(std::string word, int shift) {
         // add shift
         // (above value) % 26 to get remainder
         // add back 97 to get ASCII value
-        const char newChar = ((currentChar - constants::asciiLowerbound) + shift) % constants::alphabetLength;
-        encrypted += (newChar + constants::asciiLowerbound);
+        if (currentChar >= 'a' && currentChar <= 'z'){
+            const char newChar = ((currentChar - constants::asciiLowerBound) + shift) % constants::alphabetLength;
+            encrypted += (newChar + constants::asciiLowerBound);
+        } else {
+            encrypted += currentChar;
+        }
     }
 
     return encrypted;
@@ -33,9 +37,14 @@ std::string decrypt(std::string encryptedWord, int shift) {
         // if negative, add 26 (e.g. -1 + 26 is 'z')
         // add back 97 to get ASCII value
         const char currentChar = encryptedWord[i];
-        char newChar = ((currentChar - constants::asciiLowerbound) - shift) % constants::alphabetLength;
-        if(newChar < 0) newChar += constants::alphabetLength;
-        decryptedWord += (newChar + constants::asciiLowerbound);
+        if (currentChar >= 'a' && currentChar <= 'z'){
+            char newChar = ((currentChar - constants::asciiLowerBound) - shift) % constants::alphabetLength;
+
+            if(newChar < 0) newChar += constants::alphabetLength;
+            decryptedWord += (newChar + constants::asciiLowerBound);
+        } else {
+            decryptedWord += currentChar;
+        }
     }
 
     return decryptedWord;
@@ -44,13 +53,12 @@ std::string decrypt(std::string encryptedWord, int shift) {
 std::string promptUserInput() {
     std::string input {};
     std::cout << "Enter a word: ";
-    std::cin >> input;
+    std::getline(std::cin >> std::ws, input);
     
     return input;
 }
 
 int main() {
-    // currently assumes lowercase letters between a and z inclusive
     std::string word { promptUserInput() };
     constexpr int shift = 3;
     std::string encryptedWord {encrypt(word, shift) };
